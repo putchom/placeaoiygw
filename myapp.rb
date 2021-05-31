@@ -8,15 +8,11 @@ end
 get '/:width/:height' do
   width = params['width'].to_i
   height = params['height'].to_i
-  return_image(width, height)
-end
-
-private
-
-def return_image(width, height)
   filename = get_image_filename(width, height)
   send_file filename, type: 'image/jpeg', disposition: 'inline'
 end
+
+private
 
 def get_image_filename(width, height)
   filename = File.join(File.dirname(__FILE__) + '/images/generated', "#{width}x#{height}.jpg")

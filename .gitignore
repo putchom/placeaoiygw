@@ -89,3 +89,4 @@ build-iPhoneSimulator/
 # .rubocop-https?--*
 
 /images/generated
+.envrc
